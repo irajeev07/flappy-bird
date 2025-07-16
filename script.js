@@ -13,11 +13,11 @@ let context = canvas.getContext("2d");
 let pipeArray = [];
 let pipeWidth = 64;
 let pipeHeight = 512;
-let pipeX =window_width;
+let pipeX = window_width;
 let pipeY = 0;
 
 
-let velocityX = -2; 
+let velocityX = -2;
 
 const pipe = new Image();
 pipe.src = './pipe.png';
@@ -25,32 +25,33 @@ pipe.src = './pipe.png';
 requestAnimationFrame(update);
 setInterval(placePipes, 1500);
 
-pipe.onload= function() {
-      context.drawImage(pipe, 0, 0);
+pipe.onload = function () {
+    context.drawImage(pipe, 0, 0, pipeWidth, pipeHeight);
 }
 
 function update() {
     requestAnimationFrame(update);
-    context.clearRect(0,0,window.width,window.height);
+    context.clearRect(0, 0, window.width, window.height);
 
-    for(let i=0; i< pipeArray.length; i++) {
+    for (let i = 0; i < pipeArray.length; i++) {
         let pipe = pipeArray[i];
+        console.log(pipe.x)
         pipe.x += velocityX;
-        context.drawImage(pipe.img, pipe.x, pipe.y, pipe.width, pipe.height); 
+        context.drawImage(pipe.img, pipe.x, pipe.y, pipe.width, pipe.height);
     }
 }
 
 function placePipes() {
-    let pipe = {
-        img : pipes,
-        x : pipeX,
-        y : pipeY,
-        width : pipeWidth,
-        height : pipeHeight, 
-        passed : false
+    let temppipe = {
+        img: pipe,
+        x: pipeX,
+        y: pipeY,
+        width: pipeWidth,
+        height: pipeHeight,
+        passed: false
     }
 
-    pipeArray.push(pipe);  
+    pipeArray.push(temppipe);
 }
 
 
