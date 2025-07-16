@@ -1,5 +1,4 @@
 let canvas = document.getElementById("canvas");
-let context = canvas.getContext("2d");
 
 var window_height = window.innerHeight;
 var window_width = window.innerWidth;
@@ -7,11 +6,15 @@ var window_width = window.innerWidth;
 canvas.width = window_width;
 canvas.height = window_height;
 
-canvas.style.background="#C8C8C8";
+canvas.style.background = "#a52f2fff";
 
+let context = canvas.getContext("2d");
 const pipe = new Image();
-pipe.src = 'pipe.png';
- ctx.drawImage(img, 0, 0);
+pipe.src = './pipe.png';
+
+pipe.onload= () => {
+    context.drawImage(pipe, 0, 0);
+}
 
 
 // context.fillStyle = "black";
