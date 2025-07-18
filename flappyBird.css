@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+    background-color: skyblue;
+}
+
+#board{
+    /* background-color: skyblue; */
+    background-image: url(./flappybirdbg.png);
+}
