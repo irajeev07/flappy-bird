@@ -5,8 +5,8 @@ let boardWidth = 640;
 let context;
 
 //bird
-let birdHeight = 64;
-let birdWidth = 56;
+let birdHeight = 34;
+let birdWidth = 24;
 let birdX = boardWidth/8;
 let birdY = boardHeight/2;
 let birdImg;
@@ -54,7 +54,7 @@ window.onload = function() {
    bottomPipeImg.src = "./btpipe.png";
 
    requestAnimationFrame(update);
-   setInterval(placePipes,1500);
+   setInterval(placePipes,2500);
    document.addEventListener("keydown", moveBird);
    document.addEventListener("touchstart", moveBird);
 }
@@ -131,15 +131,15 @@ function placePipes(){
 function moveBird(event){
     if(event.code == "Space" || event.code == "ArrowUp" || event.type == "touchstart"){
         //jump
-        velocityY = -6;
-    }
-
-    //reset game
-    if(gameOver){
-        bird.y = birdY;
-        pipeArray = [];
-        score = 0;
-        gameOver = false;
+        velocityY = -4;
+        
+        //reset game
+        if(gameOver){
+            bird.y = birdY;
+            pipeArray = [];
+            score = 0;
+            gameOver = false;
+        }
     }
 }
 
