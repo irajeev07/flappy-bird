@@ -5,8 +5,8 @@ let boardWidth = 640;
 let context;
 
 //bird
-let birdHeight = 64;
-let birdWidth = 56;
+let birdHeight = 40;
+let birdWidth = 36;
 let birdX = boardWidth/8;
 let birdY = boardHeight/2;
 let birdImg;
@@ -42,7 +42,7 @@ window.onload = function() {
 
    //bird img
    birdImg = new Image();
-   birdImg.src = "./bird.png";
+   birdImg.src = "./bird.jpeg";
    birdImg.onload = function() {
     context.drawImage(birdImg,bird.x,bird.y,bird.width,bird.height);
    }
@@ -54,7 +54,7 @@ window.onload = function() {
    bottomPipeImg.src = "./btpipe.png";
 
    requestAnimationFrame(update);
-   setInterval(placePipes,1500);
+   setInterval(placePipes,3000);
    document.addEventListener("keydown", moveBird);
    document.addEventListener("touchstart", moveBird);
 }
@@ -94,7 +94,7 @@ function update(){
     context.fillText(score, 5, 45);
 
      if(gameOver){
-        context.fillText("GAME OVER!",45,300);
+        context.fillText("GAME OVER!",190,270);
     }
 }
 
